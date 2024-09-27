@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "I Use Laptop", Toast.LENGTH_SHORT).show();
             }
-        });
+        });//new comment will it be added???
     }
 }
+
+//for the last time doing this. work plzzzzzzzzzzzzz
