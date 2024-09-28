@@ -1,6 +1,5 @@
 package com.example.assignment1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,33 +11,34 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class Assign_01 extends AppCompatActivity {
 
-    private Button assign1, assign2;
-
+    private Button pc, laptop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_assign01);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-//        setContentView(R.layout.activity_main);
+        pc = findViewById(R.id.button1);
+        laptop = findViewById(R.id.button2);
 
-        assign1 = findViewById(R.id.assignment1);
-        assign2 = findViewById(R.id.assignment2);
-
-        assign1.setOnClickListener(new View.OnClickListener() {
+        pc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Assign_01.class);
-                Toast.makeText(MainActivity.this, "Assignment 01 is presenting", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+            public void onClick(View v) {
+                Toast.makeText(Assign_01.this, "I Use Pc", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        laptop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Assign_01.this, "I Use Laptop", Toast.LENGTH_SHORT).show();
             }
         });
     }
