@@ -41,5 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        assign2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Assign_02.class);
+                Toast.makeText(MainActivity.this, "Assignment 02 is presenting", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
     }
 }
