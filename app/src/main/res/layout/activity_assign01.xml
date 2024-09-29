@@ -49,5 +49,15 @@
             android:backgroundTint = "@color/buttonBackground"
             android:layout_marginStart="20dp"/>
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Main Activity"
+        android:id="@+id/button3"
+
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/teal_dark"/>
+
 
 </LinearLayout>

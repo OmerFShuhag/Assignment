@@ -14,4 +14,13 @@
 
     <color name="orange">#FF9800</color>         <!-- Orange -->
 
+
+    <color name="light_gray">#F5F5F5</color>
+
+    <color name="teal_dark">#006666</color>
+    <color name="dark_blue">#003366</color>
+    <color name="very_light_blue">#E0F7FA</color>
+
+    <color name="yellow">#FFFF00</color>
+
 </resources>

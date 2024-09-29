@@ -1,79 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="15dp"
+    android:background="@color/light_gray"
     tools:context=".Assign_02">
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/namefield"
-        android:hint="Name"/>
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/very_light_blue"
+        >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/emailfield"
-        android:hint="Email"/>
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gendergrp"
-        android:orientation="horizontal">
-        <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
-            android:id="@+id/malebtn"/>
-        <RadioButton
+            android:text="Name"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"
-            android:id="@+id/femalebtn"/>
-    </RadioGroup>
+            android:text="Email"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/termschk"
-        android:text="I Agree With the Terms And Conditions"
-        />
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="you@example.com"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingbar"
-        android:numStars="5"
-        android:stepSize="1.0"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Your Age"
-        android:paddingTop="20dp"/>
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:id="@+id/skbar"
-        android:paddingBottom="10dp"
-        />
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enable Notifications"
-        android:id="@+id/notiswitch"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:backgroundTint="@color/red"
-        android:id="@+id/submt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="e.g., 1234567890"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need a Guide?"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <Switch
+            android:id="@+id/guideSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:trackTint="@color/teal"
+            android:thumbTint="@color/teal_dark"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Window Seat?"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <Switch
+            android:id="@+id/windowSeatSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:trackTint="@color/teal"
+            android:thumbTint="@color/teal_dark"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Destination"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/destinationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Travelers"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/travelersSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progressTint="@color/teal"
+            android:thumbTint="@color/teal_dark"/>
+
+        <TextView
+            android:id="@+id/travelersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="16sp"
+            android:textColor="@color/dark_blue"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transport Preference"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/transportRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioButtonCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car"
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/radioButtonPlane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plane"
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/radioButtonTrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Train"
+                android:textColor="@color/black"/>
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional Services"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meal Service"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WiFi Service"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate your trip experience"
+            android:textSize="18sp"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:progressTint="@color/teal"
+            android:layout_marginTop="8dp"/>
+
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/teal"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

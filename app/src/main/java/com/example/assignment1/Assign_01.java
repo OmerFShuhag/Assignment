@@ -1,5 +1,6 @@
 package com.example.assignment1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Assign_01 extends AppCompatActivity {
 
-    private Button pc, laptop;
+    private Button pc, laptop, gotomain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class Assign_01 extends AppCompatActivity {
 
         pc = findViewById(R.id.button1);
         laptop = findViewById(R.id.button2);
+        gotomain = findViewById(R.id.button3);
 
         pc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +41,14 @@ public class Assign_01 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Assign_01.this, "I Use Laptop", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        gotomain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Assign_01.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
