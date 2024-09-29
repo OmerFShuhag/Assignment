@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Assignment1</string>
     <string-array name="destinations">
+        <item>City</item>
         <item>Paris</item>
         <item>New York</item>
         <item>Tokyo</item>
