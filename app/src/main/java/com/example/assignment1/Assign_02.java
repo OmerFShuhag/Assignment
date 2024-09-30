@@ -131,7 +131,7 @@ public class Assign_02 extends AppCompatActivity {
                 if (selectedCity.equals("City")) {
                     Toast.makeText(Assign_02.this, "Please select a valid city", Toast.LENGTH_SHORT).show();
                 } else {
-                    // If a valid city is selected, show the form result
+
                     showForm();
                 }
             }
@@ -146,7 +146,7 @@ public class Assign_02 extends AppCompatActivity {
         String phone = phonetext.getText().toString().trim();
 
         // Name Validation
-        if (TextUtils.isEmpty(name) || !name.matches("[a-zA-Z]+")) {
+        if (TextUtils.isEmpty(name) || !name.matches("[a-zA-Z ]+")) {
             nametext.setError("Please input a valid name");
             return false;
         }
@@ -158,7 +158,7 @@ public class Assign_02 extends AppCompatActivity {
         }
 
         // Phone Number Validation
-        if (TextUtils.isEmpty(phone) || !phone.matches("\\d{10}")) { // Adjust this regex if needed
+        if (TextUtils.isEmpty(phone) || !phone.matches("^01\\d{9}")) {
             phonetext.setError("Please input a valid phone number (10 digits expected)");
             return false;
         }
@@ -177,7 +177,7 @@ public class Assign_02 extends AppCompatActivity {
         int transportid = transport.getCheckedRadioButtonId();
         if (transportid == -1) {
             Toast.makeText(this, "Please select a transport option.", Toast.LENGTH_SHORT).show();
-            return; // Prevent further execution if no transport option is selected
+            return;
         }
 
         RadioButton selectedid = findViewById(transportid);
@@ -221,9 +221,9 @@ public class Assign_02 extends AppCompatActivity {
         isFormReset = true;
     }
     private void goToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class); // Replace MainActivity.class with your actual main activity class
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Clear the back stack
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish(); // Finish the current activity
+        finish();
     }
 }
