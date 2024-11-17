@@ -32,16 +32,23 @@
         android:layout_centerInParent="true">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/assignment1"
             android:text="Assignment_01" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/assignment2"
-            android:text="Assignment_02"
+            android:text="Assignment_02_03"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/assignment4"
+            android:text="Assignment_04"
             android:layout_marginTop="20dp" />
 
     </LinearLayout>
