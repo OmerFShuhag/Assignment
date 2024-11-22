@@ -1,6 +1,8 @@
 package com.example.assignment1;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
@@ -37,6 +39,8 @@ public class Assign_04_E extends AppCompatActivity {
         listItems = new HashMap<>();
         listAdapter = new C_ExpandableListAdapter(this, listGroup, listItems);
         expandableListView.setAdapter(listAdapter);
+        expandableListView.setVisibility(View.VISIBLE);
+
 
         data();
 
@@ -58,6 +62,10 @@ public class Assign_04_E extends AppCompatActivity {
         }
 
         listItems.put(listGroup.get(0), animeList);
+
+        for (Anime anime : animeList) {
+            Log.d("Anime", anime.getName() + ": " + anime.getDes());
+        }
 
         listAdapter.notifyDataSetChanged();
     }
