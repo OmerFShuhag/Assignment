@@ -51,6 +51,13 @@
             android:text="Assignment_04"
             android:layout_marginTop="20dp" />
 
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/assignment5"
+            android:text="Assignment_04"
+            android:layout_marginTop="20dp" />
+
     </LinearLayout>
 
 </RelativeLayout>

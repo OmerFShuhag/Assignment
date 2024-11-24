@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button assign1, assign2, assign4;
+    private Button assign1, assign2, assign4, assign5;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         assign1 = findViewById(R.id.assignment1);
         assign2 = findViewById(R.id.assignment2);
         assign4 = findViewById(R.id.assignment4);
+        assign5 = findViewById(R.id.assignment5);
 
         assign1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Assign_04.class);
                 Toast.makeText(MainActivity.this, "Assignment 04 is presenting", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        assign5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Assign_05.class);
+                Toast.makeText(MainActivity.this, "Assignment 05 is presenting", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

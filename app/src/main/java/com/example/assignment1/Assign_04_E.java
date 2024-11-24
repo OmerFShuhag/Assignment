@@ -28,45 +28,34 @@ public class Assign_04_E extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_assign04_e);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
 
         expandableListView = findViewById(R.id.expandableListView);
         listGroup = new ArrayList<>();
         listItems = new HashMap<>();
         listAdapter = new C_ExpandableListAdapter(this, listGroup, listItems);
+
+
         expandableListView.setAdapter(listAdapter);
-        expandableListView.setVisibility(View.VISIBLE);
-
-
         data();
 
     }
 
-    void data()
-    {
-        listGroup.add("Popular Anime");
-
+    void data() {
         String[] animenames = getResources().getStringArray(R.array.anime_names);
         String[] animedes = getResources().getStringArray(R.array.anime_descriptions);
 
         int[] imgid = {R.drawable.naruto, R.drawable.aot, R.drawable.op, R.drawable.ds};
 
-        List<Anime> animeList = new ArrayList<>();
-        for(int p = 0; p < animenames.length; p++)
-        {
-            animeList.add(new Anime(imgid[p], animenames[p], animedes[p]));
+        for (int i = 0; i < animenames.length; i++) {
+            listGroup.add(animenames[i]);
+            List<Anime> animeList = new ArrayList<>();
+            animeList.add(new Anime(imgid[i], animedes[i]));
+            listItems.put(animenames[i], animeList);
         }
 
-        listItems.put(listGroup.get(0), animeList);
-
-        for (Anime anime : animeList) {
-            Log.d("Anime", anime.getName() + ": " + anime.getDes());
-        }
-
+        //listItems.put(listGroup.get(0), animeList);
         listAdapter.notifyDataSetChanged();
     }
+
 }

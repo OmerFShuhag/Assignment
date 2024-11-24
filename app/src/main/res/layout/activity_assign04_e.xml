@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Assign_04_E">
+    tools:context=".Assign_04_E"
+    >
 
     <ExpandableListView
         android:layout_width="match_parent"
