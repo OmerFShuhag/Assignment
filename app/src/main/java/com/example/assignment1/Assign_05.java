@@ -21,10 +21,10 @@ public class Assign_05 extends AppCompatActivity {
 
         // Sample data
         List<rv_item> items = new ArrayList<>();
-        items.add(new Item("Title 1", "Subtitle 1"));
-        items.add(new Item("Title 2", "Subtitle 2"));
-        items.add(new Item("Title 3", "Subtitle 3"));
-        items.add(new Item("Title 4", "Subtitle 4"));
+        //items.add(new Item("Title 1", "Subtitle 1"));
+        //items.add(new Item("Title 2", "Subtitle 2"));
+       // items.add(new Item("Title 3", "Subtitle 3"));
+        //items.add(new Item("Title 4", "Subtitle 4"));
 
         // Reference the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.main);

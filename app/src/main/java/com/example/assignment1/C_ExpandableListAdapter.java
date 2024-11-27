@@ -15,6 +15,7 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> listGroup;
     private HashMap<String, List<Anime>> listItems;
+    int[] imgid = {R.drawable.naruto, R.drawable.aot, R.drawable.op, R.drawable.ds};
 
     public C_ExpandableListAdapter(Context context, List<String> listGroup, HashMap<String, List<Anime>> listItems) {
         this.context = context;
@@ -29,7 +30,7 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return 1;
+        return listItems.get(listGroup.get(groupPosition)).size();
     }
 
     @Override
@@ -59,29 +60,31 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        String groupTitle = (String) getGroup(groupPosition);
-        Anime anime = listItems.get()
+        //String groupTitle = (String) getGroup(groupPosition);
+
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.e_list_group, parent, false);
         }
+
+        ImageView imageView = convertView.findViewById(R.id.animeImage);
         TextView textView = convertView.findViewById(R.id.listGroupText);
-        textView.setText(groupTitle);
+
+        imageView.setImageResource(imgid[groupPosition]);
+        textView.setText(listGroup.get(groupPosition));
+
         return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        Anime anime = (Anime) getChild(groupPosition, childPosition);
+
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
         }
 
-        ImageView imageView = convertView.findViewById(R.id.animeImage);
-        //TextView nameView = convertView.findViewById(R.id.animeName);
+        Anime anime = (Anime) getChild(groupPosition, childPosition);
         TextView descriptionView = convertView.findViewById(R.id.animeDescription);
 
-        //imageView.setImageResource(anime.getImgid());
-        //nameView.setText(anime.getName());
         descriptionView.setText(anime.getDes());
 
         return convertView;
