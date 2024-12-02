@@ -1,6 +1,7 @@
 package com.example.assignment1;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +70,11 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView imageView = convertView.findViewById(R.id.animeImage);
         TextView textView = convertView.findViewById(R.id.listGroupText);
 
-        imageView.setImageResource(imgid[groupPosition]);
+        if (groupPosition < imgid.length) {
+            imageView.setImageResource(imgid[groupPosition]);
+        } else {
+            Log.e("Adapter", "Invalid groupPosition for imgid array: " + groupPosition);
+        }
         textView.setText(listGroup.get(groupPosition));
 
         return convertView;
