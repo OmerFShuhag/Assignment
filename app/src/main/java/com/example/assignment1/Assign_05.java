@@ -15,25 +15,28 @@ import java.util.List;
 
 public class Assign_05 extends AppCompatActivity {
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_assign05);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        // Sample data
-        List<rv_item> items = new ArrayList<>();
-        //items.add(new Item("Title 1", "Subtitle 1"));
-        //items.add(new Item("Title 2", "Subtitle 2"));
-       // items.add(new Item("Title 3", "Subtitle 3"));
-        //items.add(new Item("Title 4", "Subtitle 4"));
-
-        // Reference the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.main);
-
-        // Set layout manager
+        RecyclerView recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set adapter
-        rv_adapter adapter = new rv_adapter(items);
+        List<rv_item>itemList = new ArrayList<>();
+        itemList.add(new rv_item("Alice", "Software Engineer"));
+        itemList.add(new rv_item("Bob", "Data Scientist"));
+        itemList.add(new rv_item("Charlie", "Product Manager"));
+        itemList.add(new rv_item("Diana", "UX Designer"));
+        itemList.add(new rv_item("Eve", "DevOps Engineer"));
+
+        rv_adapter adapter = new rv_adapter(itemList);
         recyclerView.setAdapter(adapter);
     }
 }

@@ -15,10 +15,10 @@ import java.util.List;
 public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> listGroup;
-    private HashMap<String, List<Anime>> listItems;
+    private HashMap<String, List<String>> listItems;
     int[] imgid = {R.drawable.naruto, R.drawable.aot, R.drawable.op, R.drawable.ds};
 
-    public C_ExpandableListAdapter(Context context, List<String> listGroup, HashMap<String, List<Anime>> listItems) {
+    public C_ExpandableListAdapter(Context context, List<String> listGroup, HashMap<String, List<String>> listItems) {
         this.context = context;
         this.listGroup = listGroup;
         this.listItems = listItems;
@@ -70,12 +70,9 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView imageView = convertView.findViewById(R.id.animeImage);
         TextView textView = convertView.findViewById(R.id.listGroupText);
 
-        if (groupPosition < imgid.length) {
-            imageView.setImageResource(imgid[groupPosition]);
-        } else {
-            Log.e("Adapter", "Invalid groupPosition for imgid array: " + groupPosition);
-        }
+
         textView.setText(listGroup.get(groupPosition));
+        imageView.setImageResource(imgid[groupPosition]);
 
         return convertView;
     }
@@ -84,13 +81,13 @@ public class C_ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.e_list_item, parent, false);
         }
 
-        Anime anime = (Anime) getChild(groupPosition, childPosition);
+        String childItem = (String) getChild(groupPosition, childPosition);
         TextView descriptionView = convertView.findViewById(R.id.animeDescription);
 
-        descriptionView.setText(anime.getDes());
+        descriptionView.setText(childItem);
 
         return convertView;
     }

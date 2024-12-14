@@ -21,7 +21,7 @@ public class Assign_04_E extends AppCompatActivity {
     ExpandableListView expandableListView;
     C_ExpandableListAdapter listAdapter;
     List<String> listGroup;
-    HashMap<String,List<Anime>>listItems;
+    HashMap<String,List<String>>listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,8 @@ public class Assign_04_E extends AppCompatActivity {
         for (int i = 0; i < animenames.length; i++) {
             listGroup.add(animenames[i]);
 
-            List<Anime> animeList = new ArrayList<>();
-            animeList.add(new Anime(animedes[i])); // Only add description to Anime object
+            List<String> animeList = new ArrayList<>();
+            animeList.add(animedes[i]);
 
             listItems.put(animenames[i], animeList);
         }
